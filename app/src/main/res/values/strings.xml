@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HttpApp01</string>
+    <string name="title_sent">送信文字</string>
+    <string name="button_sent">送信</string>
 </resources>
