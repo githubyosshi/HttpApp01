@@ -27,6 +27,7 @@ public class HttpPostAsync extends AsyncTask<String, Void, String> {
         //MOJI+送信データをString型dataに格納
         String data = "MOJI=" + params[0];
 
+        //送信するデータのバイト数＝初期値０
         int length = 0;
         String result = "";
 
@@ -68,7 +69,7 @@ public class HttpPostAsync extends AsyncTask<String, Void, String> {
             //ネットワークを利用してデータを送信するOutputStreamオブジェクトを取得
             OutputStream out = con.getOutputStream();
 
-            //データを送信
+            //データをString型からバイト数に変換して送信
             out.write(data.getBytes("UTF-8"));
             out.flush();
 
@@ -88,7 +89,7 @@ public class HttpPostAsync extends AsyncTask<String, Void, String> {
                 //データを受信
                 in.read(b);
 
-                //バイトデータをString型に変換（文字コードUTF-8で設定する）
+                //バイトデータをString型に変換しresultに収納（文字コードUTF-8で設定する）
                 result = new String(b, "UTF-8");
 
                 //入力ストリームを閉じる
