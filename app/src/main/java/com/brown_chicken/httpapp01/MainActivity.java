@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //画面表示する
         setContentView(R.layout.activity_main);
 
         //「送信」ボタンのオブジェクト取得とイベントリスナ登録
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //HttpPostAsyncのオブジェクトを生成
         HttpPostAsync task = new HttpPostAsync(this);
 
-        //非同期処理を実行
+        //非同期処理を実行　doInBackgroundメソッドに文字を渡す
         task.execute(moji);
 
         //EditTextをクリア
